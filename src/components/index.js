@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { ApolloProvider } from 'react-apollo';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -13,20 +14,8 @@ import { api, ws } from './../config/variables';
 
 //Componentes
 import LandingPage from './landing_page';
-import Comparador from './comparador/comparador';
-import TestVocacional from './test_vocacional/test_vocacional';
-import Mapa from './mapa/mapa';
-import DatosImportantes from './datos_importantes/datos_importantes';
-import Ayuda from './mas/ayuda';
-import EnviarComentario from './mas/enviar_comentario';
-import AcercaDe from './mas/acerca_de';
-import NotFound from './reutilizable/not_found';
-import Motor from './comparador/motor2';
-import Footer from './reutilizable/footer';
-import Perfil from './perfil_escuela/perfil';
-import ResultadoTest from './test_vocacional/resultado_test';
 
-import Navbar from './reutilizable/navbar';
+
 // Crear el link
 const httpLink = createHttpLink({
   uri: `${api}/graphql`,
@@ -60,30 +49,17 @@ const client = new ApolloClient({
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <ApolloProvider client={client} >
         <BrowserRouter>
-          <div>
-            <Navbar />
-            <Switch>
-              <Route path="/comparador/:id1/:id2" component={Motor} />
-              <Route path="/comparador" component={Comparador} />
-
-              <Route path="/test" component={TestVocacional} />
-              <Route path="/ayuda" component={Ayuda} />
-              <Route path="/reportar_bug" component={EnviarComentario} />
-              <Route path="/acerca_de" component={AcercaDe} />
-              <Route path="/datos_importantes" component={DatosImportantes} />
-              <Route path="/mapa" component={Mapa} />
-              <Route path="/perfil" component={Perfil} />
-              <Route path="/resultado_test" component={ResultadoTest} />
-              <Route exact path="/" component={LandingPage} />
-              
-              <Route path="/" component={NotFound} />
-            </Switch>
-            <Footer />
-          </div>
+          <Switch>
+            <Route path="/" component={LandingPage} />
+          </Switch>
         </BrowserRouter>
       </ApolloProvider>
     );
