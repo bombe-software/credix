@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { ApolloProvider } from 'react-apollo';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -49,9 +48,6 @@ const client = new ApolloClient({
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
