@@ -1,18 +1,18 @@
 {
-  "name": "nullname",
+  "name": "credix",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "apollo-boost": "^0.1.19",
-    "apollo-link-ws": "^1.0.14",
-    "express": "^4.16.4",
-    "graphql": "^14.0.2",
-    "react": "^16.6.0",
-    "react-apollo": "^2.2.4",
-    "react-dom": "^16.6.0",
+    "apollo-link-ws": "^1.0.18",
+    "express": "^4.17.1",
+    "graphql": "^14.4.1",
+    "react": "^16.8.6",
+    "react-apollo": "^2.5.8",
+    "react-dom": "^16.8.6",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.5",
-    "subscriptions-transport-ws": "^0.9.15"
+    "react-scripts": "^2.1.8",
+    "subscriptions-transport-ws": "^0.9.16"
   },
   "scripts": {
     "start": "node index.js",
